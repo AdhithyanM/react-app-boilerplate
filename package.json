@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server ./src",
+    "build": "Webpack ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adhithyan M",
@@ -21,6 +23,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jest": "^27.6.0",
+    "html-webpack-plugin": "^5.5.3",
     "path": "^0.12.7",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
