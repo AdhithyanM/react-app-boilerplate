@@ -1,0 +1,19 @@
+# Dependencies
+/node_modules
+
+# Testing
+/coverage
+
+# Production
+/build
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# misc
+*.log
+*.log.*
+*.swp
+*.swo
