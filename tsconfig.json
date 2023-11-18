@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // Tells TypeScript not to output the transpiled JavaScript files.
+    "noEmit": true,
+
+    // These settings make TypeScript strict, helping catch more potential issues.
+    "allowUnreachableCode": false, // Warns about unreachable code, like a function after a return statement.
+    "allowUnusedLabels": false, // Warns about labels in your code that aren't used.
+    "exactOptionalPropertyTypes": true, // Makes optional property types more precise.
+    "noFallthroughCasesInSwitch": true, // Prevents you from forgetting a break in a switch case.
+    "noImplicitThis": true, // Prevents using 'this' without it being explicitly defined.
+    "noPropertyAccessFromIndexSignature": true, // Disallows accessing properties not known at compile time.
+    "noUnusedLocals": true, // Warns about declared variables that are never used.
+    "noUnusedParameters": true, // Warns about function parameters that are never used.
+    "noImplicitOverride": true, // Ensures overridden methods are marked with 'override'.
+    "noImplicitAny": true, // Prevents variables and parameters from defaulting to 'any'.
+    "noImplicitReturns": true, // Ensures all code paths in a function return a value.
+    "alwaysStrict": true, // Enforces strict mode in JavaScript.
+    "strictBindCallApply": true, // Strict checks on bind, call, and apply.
+    "strictFunctionTypes": true, // More accurate typing of functions.
+    "strictNullChecks": true, // Null and undefined are treated as distinct types.
+    "strictPropertyInitialization": true, // Ensures class properties are initialized.
+    "useUnknownInCatchVariables": true, // Catch clause variables default to 'unknown' instead of 'any'.
+
+    // Settings related to modules - how TypeScript interacts with different module systems.
+    "baseUrl": "./", // Sets the base directory for non-relative module names.
+    "module": "ES2022", // Determines the type of module code generated.
+    "moduleResolution": "node", // Strategy to use for resolving modules.
+
+    // Tells TypeScript to compile down to a version of JavaScript that supports modern features.
+    "target": "ES2022",
+    // Specifies how JSX code (used with React) gets transformed.
+    "jsx": "react-jsx",
+
+    // Allows JavaScript files to be imported into TypeScript files without errors.
+    "allowJs": true,
+    // Enables error checking in JavaScript files.
+    "checkJs": true,
+
+    // Options that change how modules interact with each other.
+    "esModuleInterop": true, // Enables importing modules that are not ECMAScript modules.
+    "isolatedModules": true // Ensures each file can be transpiled separately.
+  },
+  // Specifies which files are included in the program.
+  "include": ["src/**/*"],
+  // Specifies which files to exclude from the program.
+  "exclude": ["node_modules"]
+}
