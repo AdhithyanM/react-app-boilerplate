@@ -43,5 +43,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": "18.18.2",
+    "npm": "9.x",
+    "yarn": "please-use-npm"
   }
 }
