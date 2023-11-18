@@ -1,0 +1,42 @@
+{
+  /** "env"
+   * Defines the environments your code is expected to run in (e.g., browser, Node.js).
+   * Each environment pre-defines certain global variables that are commonly used in that environment.
+   */
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  /** "extends"
+   * Used to inherit rules from other ESLint configurations or plugins.
+   * It's a way of reusing commonly accepted rules or styles.
+   */
+  "extends": ["standard-with-typescript", "plugin:react/recommended"],
+  /** "parserOptions"
+   * Provides additional configuration options for the parser, like specifying the ECMAScript version, module system, etc.
+   */
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  /** "plugins"
+   * Adds new ESLint rules or extends existing ones.
+   * Plugins usually provide additional linting rules for specific libraries, frameworks, or environments.
+   */
+  "plugins": ["react"],
+  /** "rules"
+   * Custom rules for your project. Here, you can enable, disable, or configure individual ESLint rules.
+   */
+  "rules": {
+    "react/react-in-jsx-scope": 0
+  },
+  /** "settings"
+   * Provides shared settings for ESLint and its plugins.
+   * It's often used to specify library versions or additional information that might affect how rules are applied.
+   */
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

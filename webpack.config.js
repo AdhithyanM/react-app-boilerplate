@@ -1,5 +1,6 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 /*We are basically telling webpack to take index.js from entry. Then check for all file extensions in resolve. 
 After that apply all the rules in module.rules and produce the output and place it in main.js in the public folder.*/
@@ -9,35 +10,35 @@ module.exports = {
    * the environment - development, production, none. tells webpack
    * to use its built-in optimizations accordingly. default is production
    */
-  mode: "development",
+  mode: 'development',
   /** "entry"
    * the entry point
    */
-  entry: path.join(__dirname, "src", "index.tsx"),
+  entry: path.join(__dirname, 'src', 'index.tsx'),
   output: {
     /** "path"
      * the folder path of the output file
      */
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, 'build'),
     /** "filename"
      * the name of the output file
      */
-    filename: "main.js",
+    filename: 'main.js',
   },
   /** "target"
    * setting "node" as target app (server side), and setting it as "web" is
    * for browser (client side). Default is "web"
    */
-  target: "web",
+  target: 'web',
   devServer: {
     /** "port"
      * port of dev server
      */
-    port: "9500",
+    port: '9500',
     /** "static"
      * This property tells Webpack what static file it should serve
      */
-    static: ["./public"],
+    static: ['./public'],
     /** "open"
      * opens the browser after server is successfully started
      */
@@ -59,7 +60,7 @@ module.exports = {
      * resolve the one with the extension listed first in the array and skip the rest.
      * This is what enables users to leave off the extension when importing
      */
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   module: {
     /** "rules"
@@ -72,16 +73,22 @@ module.exports = {
       {
         test: /\.(js|ts)x?$/, //kind of file extension this rule should look for and apply in test
         exclude: /node_modules/, //folder to be excluded
-        use: "babel-loader", //loader which we are going to use
+        use: 'babel-loader', //loader which we are going to use
       },
     ],
   },
   plugins: [
+    /** "ESLintPlugin"
+     *  ESLint will check the JavaScript and TypeScript files (including React files) for any linting issues during the Webpack build process.
+     */
+    new ESLintPlugin({
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
+    }),
     /** "HtmlWebpackPlugin"
      * streamlines the process of integrating Webpack's output (the bundled JavaScript files) within the application's HTML entry point,
      */
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
+      template: path.join(__dirname, 'public', 'index.html'),
     }),
   ],
-};
+}
