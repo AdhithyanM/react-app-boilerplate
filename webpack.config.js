@@ -63,6 +63,13 @@ module.exports = {
      * This is what enables users to leave off the extension when importing
      */
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    /** "alias"
+     * defines shortcuts or aliases for module paths.
+     */
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components/'),
+      '@styles': path.resolve(__dirname, 'src/styles/'),
+    },
   },
   module: {
     /** "rules"

@@ -47,6 +47,11 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack.config.js"
+      }
     }
   },
   "root": true // Signifies that this is the root configuration and ESLint shouldn't look further up

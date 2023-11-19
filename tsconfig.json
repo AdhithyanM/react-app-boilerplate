@@ -24,6 +24,11 @@
 
     // Settings related to modules - how TypeScript interacts with different module systems.
     "baseUrl": "./", // Sets the base directory for non-relative module names.
+    "paths": {
+      // path aliases
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"]
+    },
     "module": "ES2022", // Determines the type of module code generated.
     "moduleResolution": "node", // Strategy to use for resolving modules.
 
