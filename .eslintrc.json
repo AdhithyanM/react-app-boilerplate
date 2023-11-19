@@ -33,12 +33,14 @@
    * Adds new ESLint rules or extends existing ones.
    * Plugins usually provide additional linting rules for specific libraries, frameworks, or environments.
    */
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   /** "rules"
    * Custom rules for your project. Here, you can enable, disable, or configure individual ESLint rules.
    */
   "rules": {
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0, // to have jsx elements in .tsx extension files.
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   },
   /** "settings"
    * Provides shared settings for ESLint and its plugins.
