@@ -11,7 +11,11 @@
    * Used to inherit rules from other ESLint configurations or plugins.
    * It's a way of reusing commonly accepted rules or styles.
    */
-  "extends": ["standard-with-typescript", "plugin:react/recommended"],
+  "extends": [
+    "standard-with-typescript",
+    "plugin:react/recommended",
+    "prettier"
+  ],
   /** "parserOptions"
    * Provides additional configuration options for the parser, like specifying the ECMAScript version, module system, etc.
    */
