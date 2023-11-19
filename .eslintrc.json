@@ -14,8 +14,14 @@
   "extends": [
     "standard-with-typescript",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
+  /** "parser"
+   *  Specifies the parser ESLint will use to analyze your code.
+   * It's important when using language features not yet supported by ESLint's default parser.
+   */
+  "parser": "@typescript-eslint/parser",
   /** "parserOptions"
    * Provides additional configuration options for the parser, like specifying the ECMAScript version, module system, etc.
    */
@@ -27,7 +33,7 @@
    * Adds new ESLint rules or extends existing ones.
    * Plugins usually provide additional linting rules for specific libraries, frameworks, or environments.
    */
-  "plugins": ["react"],
+  "plugins": ["react", "@typescript-eslint"],
   /** "rules"
    * Custom rules for your project. Here, you can enable, disable, or configure individual ESLint rules.
    */
@@ -42,5 +48,6 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "root": true // Signifies that this is the root configuration and ESLint shouldn't look further up
 }
