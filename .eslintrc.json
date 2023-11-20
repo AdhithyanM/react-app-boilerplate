@@ -39,8 +39,15 @@
    */
   "rules": {
     "react/react-in-jsx-scope": 0, // to have jsx elements in .tsx extension files.
+    "@typescript-eslint/no-non-null-assertion": 0, // to allow the use of non-null assertions using the ! postfix operator.
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*"]
+      }
+    ]
   },
   /** "settings"
    * Provides shared settings for ESLint and its plugins.

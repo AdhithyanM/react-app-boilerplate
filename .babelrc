@@ -17,7 +17,13 @@
     "@babel/preset-typescript" // for TypeScript support
   ],
   /*
-      Babel's code transformations are enabled by applying plugins (or presets) to your configuration file.
+      Babel's code transformations are enabled by applying plugins (or presets) to our configuration file.
   */
-  "plugins": ["@babel/plugin-transform-runtime"]
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    [
+      "babel-plugin-direct-import", // This allows us to reduce our bundle size by importing only the parts of a module that we use
+      { "modules": ["@mui/material", "@mui/icons-material"] }
+    ]
+  ]
 }
