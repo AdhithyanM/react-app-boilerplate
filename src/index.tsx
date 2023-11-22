@@ -1,3 +1,5 @@
+import { ApolloProvider } from '@apollo/client'
+import client from '@graphql/apolloClient'
 import { CssBaseline } from '@mui/material'
 import {
   createTheme,
@@ -7,7 +9,7 @@ import {
 import '@styles/globals.css'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux'
+import { Provider as ReduxProvider } from 'react-redux'
 import App from './App'
 import { store } from './store'
 
@@ -41,9 +43,11 @@ root.render(
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Provider store={store}>
-          <App />
-        </Provider>
+        <ApolloProvider client={client}>
+          <ReduxProvider store={store}>
+            <App />
+          </ReduxProvider>
+        </ApolloProvider>
       </ThemeProvider>
     </StyledEngineProvider>
   </React.StrictMode>

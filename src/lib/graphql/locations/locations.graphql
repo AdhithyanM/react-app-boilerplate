@@ -1,0 +1,58 @@
+query GetAllLocations {
+  locations {
+    id
+    name
+    description
+    photo
+    overallRating
+  }
+}
+
+query GetLocation($id: ID!) {
+  location(id: $id) {
+    id
+    name
+    description
+    photo
+  }
+}
+
+query GetLocationWithReviews($locationId: ID!) {
+  location(id: $locationId) {
+    id
+    name
+    description
+    photo
+    reviewsForLocation {
+      id
+      comment
+      rating
+    }
+    overallRating
+  }
+}
+
+query GetLatestReviews {
+  latestReviews {
+    id
+    comment
+    rating
+    location {
+      id
+      name
+    }
+  }
+}
+
+mutation SubmitReview($locationReview: LocationReviewInput!) {
+  submitReview(locationReview: $locationReview) {
+    code
+    success
+    message
+    locationReview {
+      id
+      comment
+      rating
+    }
+  }
+}

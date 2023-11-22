@@ -27,7 +27,8 @@
     "paths": {
       // path aliases
       "@components/*": ["src/components/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@graphql/*": ["src/lib/graphql/*"]
     },
     "module": "ES2022", // Determines the type of module code generated.
     "moduleResolution": "node", // Strategy to use for resolving modules.

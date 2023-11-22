@@ -1,4 +1,16 @@
+# Ignore Webpack configuration file
 webpack.config.js
+
+# Ignore Tailwind configuration files
 tailwind.config.cjs
 postcss.config.cjs
+
+# Ignore build directory
 build
+
+# Ignore Codegen configuration
+codegen.ts
+
+# Ignore generated TypeScript files from GraphQL Code Generator
+**/*.generated.ts
+src/lib/graphql/graphql-types.ts
